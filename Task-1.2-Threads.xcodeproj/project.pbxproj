@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		F01D04D22BFBE21D00420EAC /* Task-1.2-Threads */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Task-1.2-Threads"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01D04D52BFBE21D00420EAC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F01D04DC2BFBE28700420EAC /* time_for_vec.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = time_for_vec.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		F01D04D42BFBE21D00420EAC /* Task-1.2-Threads */ = {
 			isa = PBXGroup;
 			children = (
+				F01D04DC2BFBE28700420EAC /* time_for_vec.txt */,
 				F01D04D52BFBE21D00420EAC /* main.cpp */,
 			);
 			path = "Task-1.2-Threads";
