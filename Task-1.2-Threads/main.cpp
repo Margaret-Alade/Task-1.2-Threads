@@ -19,7 +19,6 @@ void count_cores() {
 }
 void sum_vec(int &sum, std::vector<int> vec1, std::vector<int> vec2, std::vector<int>::iterator it_start, std::vector<int>::iterator it_end) {
     std::this_thread::sleep_for(200ms);
-    std::cout << "Проверяем, актуальная ли ссылка на сумму в начале функции: sum = " << sum << "\n";
     auto start = std::chrono::steady_clock::now();
     for(auto i = it_start; i < it_end; i++) {
         sum += *i;
@@ -29,12 +28,10 @@ void sum_vec(int &sum, std::vector<int> vec1, std::vector<int> vec2, std::vector
     }
     auto end = std::chrono::steady_clock::now();
     std::chrono::duration<double> diff = end - start;
-    std::cout << "Проверяем актуальная ли ссылка на сумму в конце функции: sum = " << sum << "\n";
-    std::cout << "сложение двух векторов из "  << vec1.size() << " элементов, распределенное на " << vec1.size() / (it_end - it_start) << " потоков работает за " << diff.count() << "s" << "\n";
 }
+
 void sum_vec_ofstream(int &sum, std::vector<int> vec1, std::vector<int> vec2, std::vector<int>::iterator it_start, std::vector<int>::iterator it_end) {
     std::this_thread::sleep_for(200ms);
-    std::cout << "Проверяем, актуальная ли ссылка на сумму в начале функции: sum = " << sum << "\n";
     auto start = std::chrono::steady_clock::now();
     for(auto i = it_start; i < it_end; i++) {
         sum += *i;
@@ -45,8 +42,6 @@ void sum_vec_ofstream(int &sum, std::vector<int> vec1, std::vector<int> vec2, st
     auto end = std::chrono::steady_clock::now();
     std::chrono::duration<double> diff = end - start;
     std::ofstream f;
-    std::cout << "Проверяем, актуальная ли ссылка на сумму в конце функции: sum = " << sum << "\n";
-    std::cout << "сложение двух векторов из "  << vec1.size() << " элементов, распределенное на " << vec1.size() / (it_end - it_start) << " потоков работает за " << diff.count() << "s" << "\n";
     f.open("/Users/margaret/Desktop/student homework/Task-1.2-Threads/Task-1.2-Threads/time_for_vec.txt", std::fstream::app);
     if (f.is_open()) {
             f << diff.count() << " ";
@@ -62,7 +57,6 @@ void print_info() {
     std::ifstream f;
     f.open("/Users/margaret/Desktop/student homework/Task-1.2-Threads/Task-1.2-Threads/time_for_vec.txt");
     if (f.is_open()) {
-        std::cout << "Таблица" << "\n";
         std::cout << "\t"  << "\t"  << "\t" << 1000 << "\t" << "\t" << "\t" << 10000 << "\t" << "\t" <<"\t" << 100000 << "\t" << "\t" << "\t" << "\t" << 1000000 << "\n";
         std::cout << "1 потоков" << "\t";
         std::string s;
